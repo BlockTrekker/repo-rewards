@@ -7,6 +7,7 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import { BiCheckCircle, BiXCircle } from "react-icons/bi";
 
 type Person = {
   userName: string;
@@ -15,47 +16,43 @@ type Person = {
   verified: boolean;
 };
 
-const defaultData: Person[] = [
-  {
-    userName: "tanner",
+type Campaign = {
+  address: string;
+  campaign_id: string;
+  gh_user_name: string;
+  num_commitments: number;
+  repo_name: string;
+  repo_owner: string;
+  uuid: string;
+  verified: boolean;
+  votes: number;
+};
 
-    age: 24,
-    verified: true,
-  },
-  {
-    userName: "tandy",
-
-    age: 40,
-    verified: false,
-  },
-  {
-    userName: "joe",
-
-    age: 45,
-    verified: true,
-  },
-];
-
-const columnHelper = createColumnHelper<Person>();
+const columnHelper = createColumnHelper<Campaign>();
 
 const columns = [
-  columnHelper.accessor((row) => row.userName, {
-    id: "userName",
+  columnHelper.accessor((row) => row.gh_user_name, {
+    id: "gh_user_name",
     cell: (info) => <i>{info.getValue()}</i>,
     header: () => "GitHub Username",
   }),
-  columnHelper.accessor((row) => row.age, {
-    id: "age",
+  columnHelper.accessor((row) => row.num_commitments, {
+    id: "num_commitments",
     cell: (info) => <i>{info.getValue()}</i>,
     header: () => <span>Age</span>,
   }),
-  columnHelper.accessor("verified", {
+  columnHelper.accessor((row) => row.verified, {
+    id: "verified",
+    cell: (info) => (
+      <i>{info.getValue() ? <BiCheckCircle /> : <BiXCircle />}</i>
+    ),
     header: () => <span>Verified</span>,
   }),
 ];
 
-const ProjectTable = () => {
-  const [data, setData] = React.useState(() => [...defaultData]);
+const ProjectTable = ({ tableData }: { tableData: any }) => {
+  console.log("table data", tableData);
+  const [data, setData] = React.useState(() => [...tableData]);
   const rerender = React.useReducer(() => ({}), {})[1];
 
   const table = useReactTable({

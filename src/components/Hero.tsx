@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectInfo from "./ProjectInfo";
 
-const Hero = () => {
+const Hero = ({ startCampaign }: { startCampaign: any }) => {
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content text-center">
@@ -10,7 +10,7 @@ const Hero = () => {
           <p className="py-6">
             Fund contributors and maintainers of open source projects you love!
           </p>
-          <ProjectInfo />
+          <ProjectInfo startCampaign={startCampaign} />
         </div>
       </div>
     </div>

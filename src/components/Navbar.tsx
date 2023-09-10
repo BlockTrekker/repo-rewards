@@ -8,9 +8,10 @@ import { Web3Button } from "@web3modal/react";
 const Navbar = () => {
   const { data: session, status } = useSession();
   return (
-    <div className="navbar bg-base-100 mb-4 flex justify-between">
+    <div className="navbar bg-base-100 flex justify-between">
       <Link href="/" className="btn btn-ghost normal-case text-xl">
-        <BiArrowBack />
+        {/* <BiArrowBack /> */}
+        <p className="mr-4">Repo Rewards</p>
       </Link>
       <div className="flex gap-2">
         {!session && (
@@ -19,7 +20,7 @@ const Navbar = () => {
           </Link>
         )}
         {session && <Web3Button />}
-        <p className="mr-4">Repo Rewards</p>
+        {/* <p className="mr-4">Repo Rewards</p> */}
       </div>
     </div>
   );

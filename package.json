@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@octokit/rest": "^20.0.1",
+    "@supabase/supabase-js": "^2.33.1",
     "@tanstack/react-table": "^8.9.7",
     "@types/node": "20.6.0",
     "@types/react": "18.2.21",

@@ -1,4 +1,4 @@
-import ProjectTable from "@/app/components/ProjectTable";
+import ProjectTable from "@/components/ProjectTable";
 import Link from "next/link";
 import React from "react";
 
