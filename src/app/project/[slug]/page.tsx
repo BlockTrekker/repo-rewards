@@ -1,4 +1,5 @@
 import ProjectTable from "@/app/components/ProjectTable";
+import Link from "next/link";
 import React from "react";
 
 export default function Page({ params }: { params: { slug: string } }) {

@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">Repo Rewards</h1>
           <p className="py-6">
-            Fund contributors and maintainers of open source projects you use!
+            Fund contributors and maintainers of open source projects you love!
           </p>
           <ProjectInfo />
         </div>
