@@ -128,7 +128,7 @@ export const processCommitsAndInsertToDB = async (
 };
 
 export const updateAddressAndVerification = async (
-  uuid: string,
+  gh_user_name: string,
   address: string,
   verified: boolean
 ): Promise<any> => {
@@ -139,7 +139,7 @@ export const updateAddressAndVerification = async (
         address,
         verified
       })
-      .eq('uuid', uuid);
+      .eq('gh_user_name', gh_user_name);
     
     if (status === 204) {
       return "The record was updated successfully";
