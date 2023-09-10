@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <button className="btn btn-primary">Button</button>
+      {/* TODO: About Section */}
     </main>
   );
 }
